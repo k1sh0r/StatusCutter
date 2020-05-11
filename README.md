@@ -16,7 +16,6 @@ Setting up
 The rest is self explanatory I guess.
 
 
+Thanks to [@vjakash](https://github.com/vjakash) for the UI
 
 [kishor.co](http://kishor.co)
-
-Thanks to [@vjakash](https://github.com/vjakash) for the UI
