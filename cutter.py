@@ -1,6 +1,7 @@
 #!C:/Users/Kishor/AppData/Local/Programs/Python/Python38-32/python.exe
 print("Content-Type: text/html\n\n")
-print("""<div style="display: none;">""")
+print("""<html><head><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"></link>
+</head><body><br><br><br><div class='conatiner'><div style="display: none;">""")
 import cgi, os
 import cgitb; cgitb.enable()
 
@@ -48,7 +49,8 @@ for i in range(0,cuts):
 subclips.append(clip.subclip(st(cuts),clip.duration))
 print(subclips[cuts].duration)
 subclips[cuts].write_videofile("downloads/" + clipname + str(cuts+1) + '.mp4')
-print("""</div>""")
-
+print("""</div><div class='row'>""")
 for i in range(0,cuts+1):
-    print("""<a href='downloads/%s%s.mp4' download> download </a></br>""" % (clipname, i+1))
+    print("""<div class="col-lg-12 text-center" style="padding-bottom: 10px;padding-top: 10px;"><button type="button" class="btn btn-dark"><a class="text-white" href='downloads/%s%s.mp4' download> download </a></button></div>""" % (clipname, i+1))
+
+print("""</div></div><body></html>""")
