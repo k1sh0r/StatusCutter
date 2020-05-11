@@ -1,5 +1,5 @@
 # StatusCutter
-A minimalistic way to cut your (15 seconds) videos for whatsapp and instagram in windows. It can also be used in linux/unix by changing some directories in these files.
+A minimalistic way to cut your (15 seconds) videos for whatsapp and instagram in windows. It can also be used in linux/unix by changing some directories in these files. Visit [kishor.co/StatusCutter](http://kishor.co/StatusCutter) to try it online.
 
 
 There are 3 things needed for this to work
@@ -18,3 +18,4 @@ The rest is self explanatory I guess.
 
 
 [kishor.co](http://kishor.co)
+Thanks to [@vjakash](https://github.com/vjakash) for the UI
