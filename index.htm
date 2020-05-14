@@ -4,23 +4,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A minimalistic way to cut your long videos into 15 seconds segments for whatsapp and instagram in windows, instead of cutting it manually.">
+    <meta name="keywords" content="Whatsapp, instagram, cutter, video, status, stories, trim">
+    <meta name="author" content="Kishor. A">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"></link>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>Status Cutter</title>
 </head>
 
 <body>
     <div class="container-fluid">
         <div class="row bg-dark">
-            <div class="col-9 col-sm-9 col-lg-11 text-center font-weight-bold  p-3 mb-2 bg-dark text-white">
+            <div class="col-9 col-sm-9 col-lg-11 text-center font-weight-bold  p-3 bg-dark text-white align-self-center">
                 <h1 style="font-size: 2.5rem;"> STATUS CUTTER</h1>
             </div>
-            <div class="col-3 col-sm-3 col-lg-1 text-right font-weight-bold  p-3 mb-2 bg-dark text-white">
-                <button type="button" class="btn btn-light text-center mt-2 btn-outline-light "><a href="https://github.com/k1sh0r/StatusCutter"><img src="git1.png" alt="GitHub" style="width:2.5rem;" ></a></button>
+            <div class="col-3 col-sm-3 col-lg-1 text-center font-weight-bold  p-3 bg-dark text-white align-self-center">
+                <button type="button" class="btn btn-light text-center btn-outline-light"><a href="https://github.com/k1sh0r/StatusCutter"><img src="git1.png" alt="GitHub" style="width:2rem;" ></a></button>
             </div>
         </div>
     </div>
-    <br><br><br><br><br>
+    <br><br><br>
     <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h6 class="pl-3 pr-3">Cut your long videos into 15 seconds segments for whatsapp and instagram online, instead of cutting it manually.</h6>
+            </div>
+        </div>
+        <br>
+        <br>
         <div class="row">
             <div class="col-lg-12 text-center">
                 <form action="cutter.py" enctype="multipart/form-data" method="post">
@@ -38,25 +49,40 @@
                 </form>
             </div>
         </div>
+        
         <div class="row">
-        	<div class="col-lg-12 text-center" style="display: none;" id="loading">
-        		<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js">
-		        </script>
-				<lottie-player src="https://assets9.lottiefiles.com/packages/lf20_78Ybeg.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px; margin-left: auto;margin-right: auto"  loop  autoplay>
-				</lottie-player>
-        	</div>
-    	</div>
+
+            <div class="col-lg-12 text-center" style="display: none; margin-top: -30px; margin-bottom: -30px" id="loading">
+                <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js">
+                </script>
+                <lottie-player src="https://assets9.lottiefiles.com/packages/lf20_78Ybeg.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px; margin-left: auto;margin-right: auto"  loop  autoplay>
+                </lottie-player>
+            </div>
+
+            <div class="col-lg-12 col-sm-12 text-center" style="display: none;" id="uploading">
+                <h5 style="margin-left: auto;margin-right: auto">Uploading... please wait!</h5>
+            </div>
+
+            <div style="display: none;" class="col-lg-12 col-sm-12 text-center mt-5" id="howto">
+                <h5>How to</h5>  
+                <p class="pl-3 pr-3">
+                    Choose the file and upload. It may take longer if file size is larger.<br>
+                </p>   
+            </div>
+        </div>
     </div>
-    <!-- <form action="cutter.py" enctype="multipart/form-data" method="post">
-        <p>upload:</p>
-        <p><input type="file" name="filename" /></p>
-        <p><input type="submit" value="submit" /></p>
-    </form> -->
 </body>
 <script>
 function loader() {
-  document.getElementById("loading").style.display = "flex";
+
+  //$("#howto").fadeOut();
+    //setTimeout(function() {
+        $("#loading").fadeIn();
+    //}, 1000);
+    setTimeout(function() {$("#uploading").fadeIn();}, 3500);
 }
+
+
 window.addEventListener( "pageshow", function ( event ) {
   var historyTraversal = event.persisted || 
                          ( typeof window.performance != "undefined" && 
