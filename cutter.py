@@ -42,16 +42,16 @@ if fileitem.filename and fileitem.filename[-3:] in allowed_extensions:
    print(fn)
    fn = str("uploads/"+fn)
    clip = VideoFileClip(fn)
-   cuts = clip.duration/15
+   cuts = clip.duration/30
    cuts = int(cuts)
    #print(cuts)
    subclips = []
    def st(value):
-       x=value*15
+       x=value*30
        return x
    def et(value):
        x=value+1
-       x=x*15
+       x=x*30
        return x
    for i in range(0,cuts):
        subclips.append(clip.subclip(st(i),et(i)))
